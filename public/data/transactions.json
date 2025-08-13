@@ -13,11 +13,13 @@
     }
   },
 "todos": [
-  { "id": 1, "message": "Send Diwali greetings to clients", "type": "wish" },
-  { "id": 2, "message": "Follow up on Rahul Kumar's payment", "type": "remind" },
-  { "id": 3, "message": "Wish Meena Sharma on her promotion", "type": "wish" },
-  { "id": 4, "message": "Remind Akash Singh about KYC update", "type": "remind" }
-],
+  { "id": 1, "message": "Ramesh Shankar's birthday is tomorrow 23/11/2016, Don't forget to wish.", "type": "wish" },
+  { "id": 2, "message": "Dinesh Kumar's birthday is tomorrow 23/11/2016, Don't forget to wish.", "type": "wish" },
+  { "id": 3, "message": "Mahesh Bhadana's birthday is tomorrow 23/11/2016, Don't forget to wish.", "type": "wish" },
+  { "id": 4, "message": "Tisha Saini has a pending Switch Transaction", "type": "remind" },
+  { "id": 5, "message": "S.K. Paul has a pending Redemption Transaction", "type": "remind" }
+]
+,
 
   "assets": {
     "labels": ["Equity", "Debt", "Gold"],

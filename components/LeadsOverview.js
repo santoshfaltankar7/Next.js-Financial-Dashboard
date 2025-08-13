@@ -26,7 +26,8 @@ export default function LeadsOverview({ data }) {
     datasets: [
       {
         data: data.pie.data,
-        backgroundColor: ["#3b82f6", "#10b981", "#f59e0b"],
+        backgroundColor: ["#2563eb", "#1e40af", "#0ea5e9"],
+        borderWidth: 1,
       },
     ],
   };
@@ -35,38 +36,58 @@ export default function LeadsOverview({ data }) {
     labels: data.line.labels,
     datasets: [
       {
-        label: "Leads",
+        label: "Prospects",
         data: data.line.data,
-        borderColor: "#3b82f6",
-        backgroundColor: "#93c5fd",
+        borderColor: "#0ea5e9",
+        backgroundColor: "#bae6fd",
         fill: false,
         tension: 0.3,
+        pointRadius: 4,
+        pointBackgroundColor: "#0ea5e9",
       },
     ],
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow flex flex-col md:flex-row gap-4 h-[400px]">
-      {/* Pie chart takes 1/3 width on desktop */}
-      <div className="md:w-1/3 w-full h-full">
-        <Pie
-          data={pieData}
-          options={{
-            responsive: true,
-            maintainAspectRatio: false,
-          }}
-        />
-      </div>
+    <div className="bg-white p-4 rounded shadow border border-gray-200">
+      <h2 className="text-blue-800 font-bold mb-4">Leads Overview</h2>
 
-      {/* Line chart takes remaining space */}
-      <div className="flex-1 h-full">
-        <Line
-          data={lineData}
-          options={{
-            responsive: true,
-            maintainAspectRatio: false,
-          }}
-        />
+      <div className="flex flex-col md:flex-row gap-4">
+        {/* Pie Chart */}
+        <div className="md:w-1/2 w-full">
+          <h3 className="text-center text-gray-500 font-semibold mb-2">Channels</h3>
+          <div className="h-48">
+            <Pie
+              data={pieData}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { position: "bottom" },
+                },
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Line Chart */}
+        <div className="md:w-1/2 w-full">
+          <h3 className="text-center text-gray-500  font-semibold mb-2">Prospect Comparison</h3>
+          <div className="bg-blue-300 text-center text-2xl font-bold py-1 mb-2 rounded">
+            6,000
+          </div>
+          <div className="h-48">
+            <Line
+              data={lineData}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } },
+              }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

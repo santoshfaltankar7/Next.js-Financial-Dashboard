@@ -7,7 +7,7 @@ export default function Investors() {
   ];
   return (
     <Layout>
-      <h1 className="text-2xl font-bold mb-4">Investors</h1>
+      <h1 className="text-2xl font-bold mb-4 ">Investors</h1>
       <ul>
         {investors.map((inv, idx) => (
           <li key={idx} className="p-2 border-b">
