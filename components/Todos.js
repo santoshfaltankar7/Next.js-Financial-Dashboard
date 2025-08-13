@@ -15,7 +15,7 @@ export default function Todos({ todos }) {
 
   return (
     <div className="bg-white dark:bg-gray-800 text-white p-4 rounded-lg shadow">
-      <h2 className="font-bold mb-4">To-Do's</h2>
+      <h2 className="font-bold mb-4">To-Do&apos;s</h2>
       {items.map(t => (
         <div
           key={t.id}
